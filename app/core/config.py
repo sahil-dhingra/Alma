@@ -200,7 +200,9 @@ class Settings:
 
         For entrepreneurs or founders of startup businesses, officers consider evidence that the business has received significant funding from government entities, venture capital funds, angel investors, or other such funders in evaluating the credibility of submitted contracts, job offer letters, or other evidence of prospective salary or remuneration for services.
 """
-    O1A_SYSTEM_MESSAGE: str = """You are an expert immigration lawyer in the US. You are proficient in reviewing and assessing petitioner's application for the O-1A visa."""
+    O1A_SYSTEM_MESSAGE: str = """You are an expert immigration lawyer in the US. You are proficient in reviewing and assessing petitioner's application for the O-1A visa.
+    
+Assess INPUT application objectively, only on the basis of CRITERIA provided."""
     O1A_ASSESSMENT_PROMPT: str = """Based on the criteria provided, review petitioner's CV/information provided in INPUT. Return a JSON with the following:
 - "accomplishments" –List all the things that the person has done that meet the 8 criterion of O-1A Visa. Quote specific instances for each accomplishment
 - "rating" –Give a rating (low, medium & high) on the chance that this person is qualified for an O-1A immigration visa
