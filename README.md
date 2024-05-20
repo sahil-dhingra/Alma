@@ -1,6 +1,6 @@
 ## Setup the server
-1. Set Alma-Sahil as current directory
-```cd Alma-Sahil```
+1. Set this directory, Alma, as the current directory
+```cd Alma```
 
 2. Launch FastAPI server with
 ```uvicorn app.main:app --reload```
