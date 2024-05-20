@@ -15,5 +15,5 @@
    2. For subsequent calls, it will use the same LLM service and the API key
 
 ## Future improvements
-1. **Rubric** – While the current system could be used as a rough screening process, the accomplishments aren't always aligned with O1A criteria, and how much immigration lawyers would perceive or value them. Incorporating assessment process/logic/knowledge used by immigration lawyers – in LLM context and the framework, as well as defining a rubric to align accomplishments/ratings using a rubric will help improve its reliability
+1. **Rubric** – While the current system could be used as a rough screening process, the accomplishments aren't always aligned with O1A criteria, and how much immigration lawyers would perceive or value them. Incorporating assessment process/logic/knowledge used by immigration lawyers – in LLM context, with few-shot examples and different flows in the framework – as well as defining a rubric to align accomplishments/ratings using a rubric will help improve its reliability
 2. **Grounding the rating** – Current assessment is quite open-ended. Looking up similar cases using RAG and using them to determine the rating/likelihood of approval will improve the system even further.
