@@ -11,7 +11,9 @@ class Settings:
     OPENAI_MODEL_NAME: str = os.getenv("OPENAI_MODEL_NAME")
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
     GROQ_API_KEY: str = os.getenv("GROQ_API_KEY")
-    GROQ_MODEL_NAME: str = "llama3-70b-8192"
+    GROQ_MODEL_NAME: str = os.getenv("GROQ_MODEL_NAME")
+    ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY")
+    ANTHROPIC_MODEL_NAME: str = os.getenv("ANTHROPIC_MODEL_NAME")
     O1A_CRITERIA: str = """**Satisfying the O-1A Evidentiary Requirements**
 
 1. *Awards*
@@ -202,14 +204,14 @@ class Settings:
 """
     O1A_SYSTEM_MESSAGE: str = """You are an expert immigration lawyer in the US. You are proficient in reviewing and assessing petitioner's application for the O-1A visa.
     
-Assess INPUT application objectively, only on the basis of CRITERIA provided."""
+- Always return a JSON object and nothing else"""
     O1A_ASSESSMENT_PROMPT: str = """Based on the criteria provided, review petitioner's CV/information provided in INPUT. Return a JSON with the following:
 - "accomplishments" –List all the things that the person has done that meet the 8 criterion of O-1A Visa. Quote specific instances for each accomplishment
 - "rating" –Give a rating (low, medium & high) on the chance that this person is qualified for an O-1A immigration visa
     - Determine the rating based on significance and number of accomplishments per criteria
     
-Return a JSON object and nothing else
-Sample OUTPUT:
+Return a JSON object and nothing else (no text "json" and no delimiters).
+Sample OUTPUT (enclosed in delimiters```):
 ```
 {{"accomplishments": [{{"criterion_id": "Judging", "accomplishment": "accomplishment 1"}}, {{"criterion_id": "Critical employment", "accomplishment": "accomplishment 2"}}... {{"criterion_id": "Press", "accomplishment": "accomplishment n"}}], "rating": "medium"}}
 ```
